@@ -57,8 +57,8 @@ class Atendimento {
         const sql = `SELECT * FROM Atendimentos WHERE id = ${id}`
 
         conexao.query(sql, async (erro, resultados)=> {
-            const cpf = atendimento.cliente
             const atendimento = resultados[0]
+            const cpf = atendimento.cliente
             if (erro) {
                 res.status(400).json(erro)
             } else {
